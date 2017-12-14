@@ -16,10 +16,7 @@ Connect to MongoDB by specifying a URI or providing `host`, `port` and `database
 ```javascript
 var client = require('monq');
 
-client.connect('mongodb://localhost:27017/monq_example', null, function(err, connection) {
-  ...
-});
-
+client.connect('mongodb://localhost:27017/monq_example', null, function (error, connection) { … });
 ```
 
 Enqueue jobs by supplying a job name and a set of parameters.  Below, the job `reverse` is being placed into the `example` queue:
