@@ -1,4 +1,4 @@
-monq
+monq-mongoose
 ====
 
 Monq is a MongoDB-backed job queue for Node.js.
