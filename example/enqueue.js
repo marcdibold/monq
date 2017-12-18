@@ -1,4 +1,4 @@
-var monq = require('../lib/index');
+var monq = require('../lib/connection');
 
 var client = monq(process.env.MONGODB_URI || 'mongodb://localhost:27017/monq_example', { safe: true });
 var queue = client.queue('foo');
