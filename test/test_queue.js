@@ -6,7 +6,7 @@ describe('Queue', function () {
     var queue;
 
     beforeEach(function () {
-        queue = new Queue({ db: helpers.db });
+        queue = new Queue();
     });
 
     afterEach(function (done) {

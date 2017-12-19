@@ -8,7 +8,7 @@ describe('Timeout', function () {
     var queue, handler, worker, failed;
 
     beforeEach(function () {
-        queue = new Queue({ db: helpers.db });
+        queue = new Queue();
 
         handler = sinon.spy(function (params, callback) {
             // Don't call the callback, let it timeout

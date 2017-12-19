@@ -10,7 +10,7 @@ describe('Priority', function () {
     var handler, queue, worker;
 
     beforeEach(function () {
-        queue = new Queue({ db: helpers.db });
+        queue = new Queue();
 
         handler = sinon.spy(function (params, callback) {
             callback();

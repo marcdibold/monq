@@ -1,9 +1,9 @@
 var async = require('async');
-var mongo = require('mongojs');
+var mongoose = require('mongoose');
 
 exports.uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/monq_tests';
 
-exports.db = mongo(exports.uri, [], { safe: true });
+mongoose.connect(exports.uri, {});
 
 exports.each = function (fixture, fn, done) {
     async.each(fixture, function (args, callback) {

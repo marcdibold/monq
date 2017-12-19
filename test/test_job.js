@@ -1,12 +1,13 @@
 var assert = require('assert');
 var helpers = require('./helpers');
 var Job = require('../lib/job');
+var mongoose = require('mongoose');
 
 describe('Job', function () {
     var collection;
 
     beforeEach(function () {
-        collection = helpers.db.collection('jobs');
+        collection = mongoose.connection.collection('jobs');
     });
 
     afterEach(function (done) {
