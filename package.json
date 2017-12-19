@@ -1,6 +1,6 @@
 {
   "name": "monq-mongoose",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Forked from git://github.com/scttnlsn/monq.git with mongoose connection handling",
   "homepage": "http://github.com/scttnlsn/monq",
   "author": "Scott Nelson <scott@scttnlsn.com>",
