@@ -14,15 +14,14 @@ Usage
 Connect to MongoDB by specifying a URI or providing `host`, `port` and `database` options:
 
 ```javascript
-var client = require('monq');
-
-client.connect('mongodb://localhost:27017/monq_example', null, function (error, connection) { … });
+var monq = require('monq');
+var client = monq('mongodb://localhost:27017/monq_example');
 ```
 
 Enqueue jobs by supplying a job name and a set of parameters.  Below, the job `reverse` is being placed into the `example` queue:
 
 ```javascript
-var queue = connection.queue('example');
+var queue = client.queue('example');
 
 queue.enqueue('reverse', { text: 'foobar' }, function (err, job) {
     console.log('enqueued:', job.data);
@@ -32,7 +31,7 @@ queue.enqueue('reverse', { text: 'foobar' }, function (err, job) {
 Create workers to process the jobs from one or more queues.  The functions responsible for performing a job must be registered with each worker:
 
 ```javascript
-var worker = connection.worker(['example']);
+var worker = client.worker(['example']);
 
 worker.register({
     reverse: function (params, callback) {
@@ -58,7 +57,6 @@ worker.on('dequeued', function (data) { … });
 worker.on('failed', function (data) { … });
 worker.on('complete', function (data) { … });
 worker.on('error', function (err) { … });
-worker.on('terminated', function (err) { … });
 ```
 
 Install
