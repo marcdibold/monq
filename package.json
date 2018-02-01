@@ -1,5 +1,5 @@
 {
-  "name": "monq-mongoose",
+  "name": "monq",
   "version": "0.4.10",
   "description": "Forked from git://github.com/scttnlsn/monq.git with mongoose connection handling",
   "homepage": "http://github.com/scttnlsn/monq",
